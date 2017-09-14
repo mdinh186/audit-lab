@@ -91,7 +91,7 @@ def read_csv_file(filename, required_fieldnames=None, varlen=False):
         if required_fieldnames != None:
             # check that all required fieldnames are present
             required_fieldnames = [ids.clean_id(id) for id in required_fieldnames]
-            missing_fieldnames = set(required_fieldnames).difference(set(fieldnames))
+            missing_fieldnames = set(required_fieldnames).difference(set(fieldnames))  # check if there isn't name that should be and vice versa
             if len(missing_fieldnames) > 0:
                 utils.myerror("File {} has fieldnames {}, while {} are required. Missing {}."
                               .format(filename, fieldnames,
